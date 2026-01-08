@@ -1,0 +1,11 @@
+machine_id,type,location,pollutant,cin,cout,unit,airflow_m3_per_s,period_s,lambda_hazard,beta_nb_per_kg,ecoimpactscore,notes
+CYB-AIR-CANOPY-01,UrbanNanoswarmCanopy,Phoenix-Intersection-A,PM2.5,40,28,ug/m3,3.0,3600,3.0,5.0e8,0.92,"Lamppost/roof modules over arterial; 12 ug/m3 PM2.5 reduction in rush hour."
+CYB-AIR-FLEET-02,TeslaswarmFleetPod,Phoenix-BusRoute-Blue,BlackCarbon,5.0,3.8,ug/m3,0.4,5400,3.5,6.0e8,0.89,"Retrofit intake pods on e-buses; BC reduction at stops."
+CYB-AIR-ROOF-03,OzoneCatalystTiles,Downtown-Roofs,O3,75,65,ppb,2.0,3600,2.0,2.0e8,0.85,"Nanocatalyst tiles active during high-ozone heat events."
+CYB-AIR-FENCE-04,VOCFenceCurtain,Industrial-East,VOC,1.5,0.7,mg/m3,1.2,1800,2.5,4.0e8,0.88,"Fence-line cartridges capturing VOCs/NOx in near-field."
+CYB-AIR-SCHOOL-05,SchoolZoneShield,Elementary-North,PM2.5,30,18,ug/m3,1.0,2700,4.0,5.5e8,0.94,"Drop-off/pick-up air shield prioritized for child exposure reductions."
+CYB-AIR-PLUME-06,LaunchPlumeSampler,Spaceport-Test,NOx,120,118,ppb,0.05,900,2.5,3.0e8,0.80,"Tethered swarm pods sampling launch plumes for Swarm-x LCA."
+CYB-AIR-BRIDGE-07,NanoSensorSkin,Highway-Overpass,PM2.5,38,37,ug/m3,0.02,7200,3.0,5.0e8,0.78,"TENG/TEG-powered sensors mapping PM/NO2 and vibration."
+CYB-AIR-CANAL-08,CanalDustShield,Urban-Canal-Segment,DustPM10,20,14,ug/m3,0.8,3600,2.5,4.5e8,0.87,"Floating dust-capture modules with micro-harvesters."
+CYB-AIR-LAB-09,CampusMicroAtmosLab,University-Campus,Multi,0,0,na,0.0,0,1.0,1.0e8,0.90,"Reference lab calibrating Cybo-Air nodes and qpudatashards."
+CYB-AIR-FARM-10,SalinityAirWaterSentinel,Ag-ReturnFlow-Field,PM2.5,22,19,ug/m3,0.3,5400,2.5,3.5e8,0.86,"Hybrid node tracking dust PM and irrigation salinity for dual-media Karma."
