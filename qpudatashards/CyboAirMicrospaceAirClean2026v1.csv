@@ -1,0 +1,6 @@
+node_id,region,altitude_m,pollutant,cin,cout,unit,airflow_m3_per_s,period_s,lambda_hazard,beta_nb_per_kg,ecoimpactscore,notes
+CYB-AIR-URBAN-01,Phoenix-AZ,50,PM2.5,35,25,ug/m3,2.0,3600,3.0,500000000.0,0.9,Low-alt swarm canopy over arterial; reduces PM2.5 by 10 ug/m3 over 1 h.
+CYB-AIR-SCHOOL-02,Phoenix-AZ,5,NO2,45,30,ppb,0.5,3600,2.5,300000000.0,0.88,Roofline nanoswarm scrubbers near school reduce NO2 near traffic corridor.
+CYB-AIR-IND-STACK-03,Industrial-Zone-AZ,40,VOC,1.2,0.6,mg/m3,1.0,1800,2.0,400000000.0,0.85,Nanoswarm microfilters capture fugitive VOCs downwind of small stack.
+CYB-AIR-MICROTRANS-04,City-Fleet-AZ,0,BlackCarbon,4.0,3.2,ug/m3,0.3,7200,3.5,600000000.0,0.87,On-vehicle nanoswarm intake filters reduce BC around bus stops.
+CYB-AIR-ROOFTOP-05,Downtown-AZ,20,O3,70,62,ppb,1.5,3600,2.0,200000000.0,0.8,Rooftop catalyst array with nanoswarm-coordinated flow to reduce ozone peaks.
