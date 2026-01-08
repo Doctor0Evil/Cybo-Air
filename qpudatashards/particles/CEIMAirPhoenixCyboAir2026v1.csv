@@ -1,0 +1,11 @@
+node_id,machine_id,location,pollutant,cin,cout,unit,airflow_m3_per_s,period_s,mass_removed_kg,lambda_hazard,beta_nb_per_kg,nanokarmabytes,ecoimpactscore,notes
+PHX-CANOPY-A,CYB-AIR-CANOPY-01,Phoenix-Intersection-A,PM2.5,40,28,ug/m3,3.0,3600,5.184,3.0,5.0e8,7.776e9,0.92,"Urban nanoswarm canopy; rush-hour PM2.5 reduction."
+PHX-FLEET-BC,CYB-AIR-FLEET-02,Phoenix-BusRoute-Blue,BlackCarbon,5.0,3.8,ug/m3,0.4,5400,0.00259,3.5,6.0e8,5.43e8,0.89,"Teslaswarm fleet intake pod; BC cuts at bus stops."
+PHX-ROOF-O3,CYB-AIR-ROOF-03,Downtown-Roofs,O3,75,65,ppb,2.0,3600,0.0936,2.0,2.0e8,3.744e8,0.85,"Ozone-catalyst tiles during heat-event peaks."
+PHX-FENCE-VOC,CYB-AIR-FENCE-04,Industrial-East,VOC,1.5,0.7,mg/m3,1.2,1800,6.912,2.5,4.0e8,6.912e9,0.88,"Fence-line VOC curtain near sensitive receptors."
+PHX-SCHOOL-PM,CYB-AIR-SCHOOL-05,Elementary-North,PM2.5,30,18,ug/m3,1.0,2700,2.3328,4.0,5.5e8,5.132e9,0.94,"School-zone shield; child-weighted PM2.5 reduction."
+PHX-PLUME-NOx,CYB-AIR-PLUME-06,Spaceport-Test,NOx,120,118,ppb,0.05,900,0.00018,2.5,3.0e8,1.35e8,0.80,"Launch plume sampler; Swarm-x LCA calibration."
+PHX-BRIDGE-PM,CYB-AIR-BRIDGE-07,Highway-Overpass,PM2.5,38,37,ug/m3,0.02,7200,0.00055,3.0,5.0e8,8.25e7,0.78,"Bridge sensor skin; dust/PM monitoring."
+PHX-CANAL-DUST,CYB-AIR-CANAL-08,Urban-Canal-Segment,DustPM10,20,14,ug/m3,0.8,3600,4.1472,2.5,4.5e8,4.664e9,0.87,"Smart-canal shield; dust and evaporation reduction."
+PHX-LAB-REF,CYB-AIR-LAB-09,University-Campus,Multi,0,0,na,0.0,0,0.0,1.0,1.0e8,0.0,0.90,"Reference micro-atmosphere lab; calibration only."
+PHX-FARM-PM,CYB-AIR-FARM-10,Ag-ReturnFlow-Field,PM2.5,22,19,ug/m3,0.3,5400,0.191,2.5,3.5e8,1.671e8,0.86,"Salinity-aware air-water sentinel; dust and salinity co-benefit."
