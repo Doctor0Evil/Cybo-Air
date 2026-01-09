@@ -1,0 +1,73 @@
+\section*{System Model and Methods}
+
+\subsection*{State, data schema, and units}
+
+Each Cybo-Air node $i$ corresponds to one row in the Phoenix shard \texttt{CyboAirTenMachinesPhoenix2026v1.csv} with fields $(\texttt{cin}_i,\texttt{cout}_i,\texttt{unit}_i,\texttt{airflow}_i, \texttt{period}_i,\lambda_i,\beta_i,S_i)$, where $\texttt{cin}_i,\texttt{cout}_i$ are inlet and outlet concentrations, $\texttt{unit}_i\in\{\mu\text{g/m}^3,\text{mg/m}^3,\text{ppb}\}$ is the concentration unit tag, $\texttt{airflow}_i=Q_i$ is volumetric flow (m$^3$/s), $\texttt{period}_i=t_i$ is the logging interval (s), $\lambda_i$ is the hazard weight, $\beta_i$ is the NanoKarmaBytes/kg factor, and $S_i\in[0,1]$ is the ecoimpact score.
+
+Define the unit-conversion operator $u(\cdot)$ that maps shard units to kg/m$^3$ as
+\[
+u(\text{unit}_i,T,MW_x)=
+\begin{cases}
+10^{-9} & \text{if unit}_i=\mu\text{g/m}^3,\\[4pt]
+10^{-6} & \text{if unit}_i=\text{mg/m}^3,\\[4pt]
+\displaystyle \frac{MW_x}{R T}\,10^{-9} & \text{if unit}_i=\text{ppb},\\[4pt]
+0 & \text{otherwise},
+\end{cases}
+\]
+with gas constant $R=8.3145$ J mol$^{-1}$ K$^{-1}$, ambient temperature $T$ (K), and pollutant molar mass $MW_x$ (kg/mol).\cite{file:1}\cite{file:2}
+
+\subsection*{Eq. 1: Per-node mass removed (generalized CEIM operator)}
+
+The shard concentration difference and its conversion to kg/m$^3$ are
+\[
+\Delta C_i = \max(0, C_{\text{in},i}-C_{\text{out},i}), \qquad
+C_{i,u}=u(\text{unit}_i,T,MW_x)\,\Delta C_i.
+\]
+The pollutant mass removed by node $i$ over one logging period is
+\[
+M_i = C_{i,u}\,Q_i\,t_i,
+\]
+which is the CEIM mass-balance form already validated for PFBS and \textit{E. coli}, now applied to PM$_{2.5}$, NO$_x$, O$_3$, VOCs, dust, and black carbon.\cite{file:1}\cite{file:2}
+
+\subsection*{Eq. 2: Hazard-weighted Air NanoKarmaBytes}
+
+Using shard fields $\lambda_i$ and $\beta_i$, define Air NanoKarmaBytes
+\[
+K_i = \lambda_i\,\beta_i\,M_i.
+\]
+Higher $\lambda_i$ values are assigned to child-sensitive, fence-line, and launch-plume nodes; $\beta_i$ is calibrated from EcoNet PFBS and \textit{E. coli} ledgers to preserve cross-media comparability.\cite{file:1}\cite{file:2}
+
+\subsection*{Eq. 3: Ecoimpact score as normalized Karma}
+
+Let $S_i\in[0,1]$ denote the ecoimpact score. A consistent mapping from NanoKarmaBytes to $S_i$ is
+\[
+S_i = 1 - \exp\!\left(-\alpha\,\frac{K_i}{K_0}\right),
+\]
+with calibration constants $\alpha>0$, $K_0>0$ selected so that high-Karma nodes (e.g., school shields, urban canopies) reproduce the shard range $S_i\approx 0.78$--$0.94$.\cite{file:1}\cite{file:2}
+
+\subsection*{Eq. 4: Nanogeospatial down-hanging actuation weight}
+
+Define a geospatial actuation weight $w_i$ that combines local pollution gradient, vertical clearance, and receptor sensitivity:
+\[
+w_i = \gamma_1\,\frac{\|\nabla C_i\|}{\|\nabla C\|_{\text{ref}}}
+      + \gamma_2\,\frac{z_{\text{clear},i}}{z_{\text{ref}}}
+      + \gamma_3\,\chi_{\text{sens},i},
+\]
+where $\|\nabla C_i\|$ is the local concentration gradient magnitude from nanosensor skins and plume samplers, $z_{\text{clear},i}$ is the vertical distance to controlled airspace or wildlife corridors, $\chi_{\text{sens},i}$ is a binary indicator of sensitive receptors (schools, canals, agriculture), and $\gamma_{1,2,3}$ are calibration coefficients.\cite{file:1}\cite{file:2}
+
+\subsection*{Eq. 5: Nanoswarm duty-cycle update (control law)}
+
+Let $u_i^k\in[0,1]$ be the duty cycle (fan speed or nanoswarm intensity) of node $i$ at control step $k$. The update law is
+\[
+u_i^{k+1}
+= \Pi_{[0,1]}\!\left(
+u_i^k
++ \eta_1\,\frac{M_i}{M_{\text{ref}}}
++ \eta_2\,\frac{K_i}{K_{\text{ref}}}
++ \eta_3\,w_i
+- \eta_4\,c_{\text{power},i}
+\right),
+\]
+where $\Pi_{[0,1]}(\cdot)$ projects onto $[0,1]$, $M_{\text{ref}},K_{\text{ref}}$ are reference scales derived from the Phoenix shard, $c_{\text{power},i}$ is a normalized power-cost term from TENG/TEG harvesters and storage, and $\eta_{1,2,3,4}$ are control gains tuned by Phoenix pilots.
+
+This five-equation system is applied uniformly to all Cybo-Air machine classes (urban canopies, fleet pods, tiles, curtains, shields, canal and agricultural sentinels, and sensor skins), with only machine-specific parameters and geospatial contexts differing.
