@@ -1,0 +1,4 @@
+node_id,timestamp_utc,lat,lon,canal_segment,flow_m3_per_h,water_temp_c,cin_co2_ppm,cout_co2_ppm,cin_pm25_ug_m3,cout_pm25_ug_m3,water_evap_kg_h,fan_power_w,harvested_power_w,grid_intensity_gco2_kwh,renewable_fraction,ecoimpact_score,karma_delta,notes
+SV-PHX-01,2026-01-26T00:00:00Z,33.4484,-112.0740,CAP-Lateral-7,180000,28.5,420.3,310.2,18.4,12.1,55.2,180,260,45,0.91,0.88,0.86,"Pilot steam_vault in central Phoenix canal; mist vented to shaded sidewalk plenum."
+SV-PHX-01,2026-01-27T00:00:00Z,33.4484,-112.0740,CAP-Lateral-7,182500,29.1,419.9,309.7,17.9,11.8,57.6,182,263,44,0.92,0.89,0.87,"Day 2; operating within thermal and hydraulic corridors, zero overflow events."
+SV-PHX-TEST-LAB,2026-01-20T00:00:00Z,33.4600,-112.0200,Lab-Loop-Canal,5000,30.0,421.0,300.0,20.0,12.0,6.5,75,0,0,1.00,0.91,0.90,"Bench flume validation of steam capture and mist quality; Phoenix synthetic canal matrix."
