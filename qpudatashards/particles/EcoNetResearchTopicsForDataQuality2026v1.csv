@@ -1,0 +1,11 @@
+identityid,topicid,topic_name,category,region,priority,ecoimpact_potential,data_quality_gain,requires_human_lab,requires_field_deployment,evidence_hex
+BOSTROM-PHX-01,RT-01,CEIM Kernel Calibration,CEIM-KERNEL,Phoenix-AZ,HIGH,0.96,0.98,TRUE,TRUE,a1b2c3d4e5f67890
+BOSTROM-PHX-01,RT-02,Risk-Normalized Hazard Weights,RISK-WEIGHT,Central-AZ,HIGH,0.94,0.96,FALSE,TRUE,1122334455667788
+BOSTROM-PHX-01,RT-03,Arizona Qpudatashard Schema Hardening,SCHEMA,Central-AZ,HIGH,0.92,0.99,FALSE,FALSE,f0e1d2c3b4a59687
+BOSTROM-PHX-01,RT-04,Biodegradability and Ecotoxicity Evidence Binding,MATERIAL-SAFETY,Global,HIGH,0.93,0.95,TRUE,TRUE,99aabbccddeeff00
+BOSTROM-PHX-01,RT-05,Deterministic Control Logic Evidence,CONTROL-LOGIC,Global,MEDIUM,0.90,0.94,FALSE,TRUE,1234567890abcdef
+BOSTROM-PHX-01,RT-06,Karma-Tolerance Shard Refinement,KARMA-TOLERANCE,Global,MEDIUM,0.89,0.96,FALSE,FALSE,4a3b2c1d9e8f7g6h
+BOSTROM-PHX-01,RT-07,Spatiotemporal Fluctuation Bands,UNCERTAINTY,Central-AZ,MEDIUM,0.88,0.97,FALSE,FALSE,8f7e6d5c4b3a2910
+BOSTROM-PHX-01,RT-08,Cross-Platform Identity DID/VC Binding,IDENTITY,Global,MEDIUM,0.87,0.93,FALSE,FALSE,0p1q2r3s4t5u6v7w
+BOSTROM-PHX-01,RT-09,Unified NanoKarmaByte Metric,NANOKARMA,Central-AZ,MEDIUM,0.91,0.92,FALSE,FALSE,9g8h7i6j5k4l3m2n
+BOSTROM-PHX-01,RT-10,Boundary-Condition and FPR Test Suites,VALIDATION,Central-AZ,HIGH,0.95,0.97,FALSE,TRUE,x8y7z6a5b4c3d2e1
