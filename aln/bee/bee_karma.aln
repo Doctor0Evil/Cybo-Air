@@ -1,0 +1,30 @@
+particle BeeCorridor {
+  id: CorridorId,
+  hive_id: HiveId,
+  landscape_window: LandscapeWindowId,
+  bee_karma: Scalar<0.0, 1.0>,   // κ_bee
+  polytope_id: PolytopeId,
+  stress_state: BeeStressorStateRef,
+}
+
+particle BeeAgent {
+  id: AgentId,
+  identity_hash: Hash256,
+  bee_karma: Scalar<0.0, 1.0>,
+  blood_gate_level: Enum<u8, 0,1,2,3>,
+}
+
+predicate BeeCorridorAdmissible(c: BeeCorridor) {
+  inside_polytope(c.stress_state, c.polytope_id) &&
+  c.bee_karma >= get_polytope_kappa_min(c.polytope_id)
+}
+
+predicate BeeAgentAdmissible(a: BeeAgent) {
+  a.bee_karma >= 0.4 && a.blood_gate_level > 0
+}
+
+// Governance hooks
+on_transition DeployNode(node: AirNode, corridor: BeeCorridor, agent: BeeAgent) {
+  require BeeCorridorAdmissible(corridor);
+  require BeeAgentAdmissible(agent);
+}
