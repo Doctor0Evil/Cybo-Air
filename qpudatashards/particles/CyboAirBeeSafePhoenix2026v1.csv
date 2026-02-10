@@ -1,0 +1,6 @@
+nodeid,region,altitudem,pollutant,cin,cout,unit,airflowm3pers,periods,lambdahazard,betanbperkg,beekappa,beehazardbaseline,beehazardmax,ecoimpactscore,notes
+CYB-AIR-APIARY-01,Phoenix-AZ,5,PM2.5,30,20,ug/m3,0.8,3600,3.5,5.0e8,1.0,0.80,1.10,0.93,Canopy node upwind of apiary reducing PM2.5 near hives.
+CYB-AIR-APIARY-02,Phoenix-AZ,5,O3,65,58,ppb,0.5,3600,3.0,2.0e8,0.8,0.75,1.05,0.90,Rooftop catalyst tile limiting ozone peaks in pollinator corridor.
+CYB-AIR-CORRIDOR-03,Phoenix-AZ,10,NOx,40,28,ppb,1.0,3600,2.8,3.0e8,0.5,0.70,1.00,0.88,Traffic-edge nanoswarm tuned for child + bee exposure.
+CYB-AIR-FLEET-04,Phoenix-AZ,0,BlackCarbon,4.5,3.5,ug/m3,0.3,5400,3.8,6.0e8,0.2,0.65,0.95,0.87,Fleet intake pods routing through pollinator-friendly streets.
+CYB-AIR-ROOF-05,Phoenix-AZ,15,VOC,1.0,0.5,mg/m3,0.9,1800,2.4,4.0e8,0.6,0.78,1.05,0.85,Industrial-edge roof modules reducing VOCs near urban farms.
