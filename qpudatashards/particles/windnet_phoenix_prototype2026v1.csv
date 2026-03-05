@@ -1,0 +1,5 @@
+nodeid,assettype,region,lat,lon,avgwindspeed_ms,dominantwind_from,season,netheight_m,netwidth_m,netporosity,expected_capture_kg_per_year,maintenance_visits_per_year,ecoimpactscore,karmaperunit,notes
+PHX-WINDNET-01,UrbanWindTrashNet,Phoenix-AZ-US,33.4484,-112.0740,3.5,W,Summer,8.0,15.0,0.6,420.0,12,0.86,281.4,"Downtown skimming-flow canyon, leeward corner net above sidewalk sightline."
+PHX-WINDNET-02,UrbanWindTrashNet,Phoenix-AZ-US,33.4510,-112.0800,3.2,E,Winter,10.0,18.0,0.5,390.0,10,0.83,261.3,"East-dominant season net on corridor fed by bidirectional winds."
+PHX-WINDNET-03,UrbanWindTrashNet,Phoenix-AZ-US,33.4525,-112.0680,2.8,W,Summer,6.0,12.0,0.7,260.0,8,0.78,174.2,"Smaller net near transit hub; low safety and visual nuisance scores."
+PHX-WINDNET-04,UrbanWindTrashNet,Phoenix-AZ-US,33.4450,-112.0705,3.9,W,Summer,12.0,20.0,0.4,680.0,16,0.90,455.6,"High-capture flagship installation co-located with air-globe node."
